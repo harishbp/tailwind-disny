@@ -42,18 +42,18 @@ const Header = () => {
     <div className='flex items-center justify-between p-5'>
       <div className='flex gap-8 items-center'>
         <img src={logo} alt='logo' className='w-[80px] md:w-[115px] object-cover' />
-        <div className='hidden md:flex gap-8'>
+        <div className='hidden medium:flex gap-8'>
           {menu.map((item, index) => {
             return <HeaderItem key={index} name={item.name} Icon={item.icon} />
           })}
         </div>
-        <div className='flex gap-8 md:hidden'>
+        <div className='flex gap-8 medium:hidden'>
           {menu.map((item, index) => {
             return index < 3 && <HeaderItem key={index} name={''} Icon={item.icon} />
           })}
-          <div className='md:hidden' onClick={()=>setToggle(!toggle)} >
+          <div className='medium:hidden' onClick={()=>setToggle(!toggle)} >
             <HeaderItem name='' Icon={HiDotsVertical} />
-            {toggle && <div className='absolute mt-3 p-3 border border-gray-700 hover:bg-gray-800 '>
+            {toggle && <div className='absolute mt-3 p-3 border border-gray-700 bg-gray-600 hover:bg-gray-800 '>
               {menu.map((item, index) => {
                 return index > 2 && <HeaderItem name={item.name} Icon={item.icon} />
               })}
